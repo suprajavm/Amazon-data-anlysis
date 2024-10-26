@@ -53,29 +53,3 @@ select product_id,product_name,rating,discount_percentage from mytable order by 
 
 /*Price Distribution Across Categories: */
 select min(discounted_price) as min,max(discounted_price) as max,avg(CAST(REPLACE(discount_percentage, '₹', '') AS DECIMAL(10,2))) as average ,category from mytable group by category;
-
-INSERT INTO mytable (
-    product_id, 
-    product_name, 
-    category, 
-    discounted_price, 
-    actual_price, 
-    discount_percentage, 
-    rating, 
-    rating_count, 
-    user_id, 
-    user_name, 
-    product_link
-) VALUES (
-    'P001', 
-    'Wireless Bluetooth Headphones', 
-    'Electronics', 
-    '49.99', 
-    '99.99', 
-    '50', 
-    '4.5', 
-    '120', 
-    'U123456', 
-    'John Doe', 
-    'https://example.com/product/P001'
-);
